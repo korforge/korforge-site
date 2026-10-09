@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="vegeta-saiyan logo">
+  <defs>
+    <radialGradient id="vs-aura" cx="64" cy="72" r="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDE047" stop-opacity=".9"/>
+      <stop offset=".6" stop-color="#F59E0B" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vs-bolt" x1="40" y1="14" x2="88" y2="114" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFBEB"/>
+      <stop offset=".5" stop-color="#FDE047"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#1A1420"/>
+  <!-- spiky aura -->
+  <path d="M64 12 72 34 92 18 88 42 112 38 98 58 118 72 94 78 102 102 80 92 64 116 48 92 26 102 34 78 10 72 30 58 16 38 40 42 36 18 56 34Z" fill="url(#vs-aura)"/>
+  <!-- lightning bolt -->
+  <path d="M72 20 42 70h20l-8 38 32-52H66Z" fill="url(#vs-bolt)" stroke="#1A1420" stroke-width="3" stroke-linejoin="round"/>
+  <!-- rps ticks -->
+  <path d="M22 108h10m6 0h10m32 0h10m6 0h10" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+</svg>

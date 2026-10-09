@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="Depozit logo">
+  <defs>
+    <linearGradient id="dz-a" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="dz-b" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#0F1A24"/>
+  <!-- stacked storage layers (isometric) -->
+  <path d="M64 78 28 60l36-18 36 18Z" fill="url(#dz-b)"/>
+  <path d="M64 90 28 72v10l36 18 36-18V72Z" fill="url(#dz-b)"/>
+  <path d="M64 62 28 44l36-18 36 18Z" fill="url(#dz-a)"/>
+  <path d="M28 44v12l36 18 36-18V44L64 62Z" fill="#1E3A5F"/>
+  <path d="M64 62v12" stroke="#0F1A24" stroke-width="2"/>
+  <!-- down arrow: deposit -->
+  <path d="M64 18v26m-9-9 9 9 9-9" stroke="#F4F5F7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korforge — Open source tools, forged to be useful</title>
+  <meta name="description" content="Korforge is an open source org sharing small, focused libraries and tools: Depozit (gRPC file storage) and vegeta-saiyan (REST API stress testing).">
+  <meta property="og:title" content="Korforge">
+  <meta property="og:description" content="Open source tools, forged to be useful.">
+  <meta property="og:image" content="assets/logos/korforge.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logos/korforge.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/logos/korforge.svg" alt="" width="32" height="32">
+      <span>Korforge</span>
+    </a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <img class="hero-logo" src="assets/logos/korforge.svg" alt="Korforge logo" width="112" height="112">
+      <h1>Open source tools,<br><span class="ember">forged to be useful.</span></h1>
+      <p class="lead">Korforge is a home for small, focused libraries and tools across different languages. Built to solve real problems, shared with the community.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">Explore projects</a>
+        <a class="btn btn-ghost" href="#about">About</a>
+      </div>
+      <ul class="langs" aria-label="Languages">
+        <li>Go</li><li>Python</li><li>gRPC</li><li>CLI</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Depozit -->
+      <article class="project" style="--accent:#2DD4BF; --accent-2:#3B82F6">
+        <div class="project-info">
+          <img class="project-logo" src="assets/logos/depozit.svg" alt="Depozit logo" width="64" height="64">
+          <h3>Depozit</h3>
+          <p class="tagline">Slim, efficient file storage over gRPC.</p>
+          <p class="summary">Self-hosted Go server that stores and serves your files. Upload, read, list and organize files in containers from a typed Python client, sync or async.</p>
+          <ul class="pills">
+            <li>Go</li><li>Python</li><li>gRPC</li><li>async</li>
+          </ul>
+          <div class="links">
+            <a class="btn btn-accent" href="https://github.com/korforge/depozit-server" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="https://pypi.org/project/depozit/" target="_blank" rel="noopener">PyPI</a>
+          </div>
+        </div>
+
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="dz-quick">Quick start</button>
+            <button role="tab" aria-selected="false" data-tab="dz-client">Python client</button>
+            <button role="tab" aria-selected="false" data-tab="dz-async">Async</button>
+          </div>
+          <div class="tab-panel" id="dz-quick">
+<pre><code>pip install depozit
+
+<span class="c"># installs the Go server as a systemd user service</span>
+depozit server install
+
+<span class="c"># API key is generated on first install</span>
+cat ~/.depozit/.env
+
+depozit server uninstall   <span class="c"># stored files are kept</span></code></pre>
+          </div>
+          <div class="tab-panel" id="dz-client" hidden>
+<pre><code><span class="c"># pip install depozit</span>
+import depozit
+
+depozit.connect("localhost:50051", api_key="your-api-key")
+
+depozit.upload("photo.jpg", "images/photo.jpg")
+data = depozit.read("images/photo.jpg")
+
+for path in depozit.find(prefix="images/"):
+    print(path)</code></pre>
+          </div>
+          <div class="tab-panel" id="dz-async" hidden>
+<pre><code>import depozit.aio as depozit
+
+await depozit.connect("localhost:50051", api_key="your-api-key")
+data = await depozit.read("images/photo.jpg")</code></pre>
+          </div>
+        </div>
+      </article>
+
+      <!-- vegeta-saiyan -->
+      <article class="project" style="--accent:#FACC15; --accent-2:#F59E0B">
+        <div class="project-info">
+          <img class="project-logo" src="assets/logos/vegeta-saiyan.svg" alt="vegeta-saiyan logo" width="64" height="64">
+          <h3>vegeta-saiyan</h3>
+          <p class="tagline">Stress test REST APIs from a JSON flow.</p>
+          <p class="summary">CLI that hits your REST endpoints with ramping load and records status, latency and errors for every request. Powered by <a href="https://github.com/tsenart/vegeta" target="_blank" rel="noopener">Vegeta</a>, bundled in one binary.</p>
+          <p class="note">Available for Ubuntu only, for now.</p>
+          <ul class="pills">
+            <li>CLI</li><li>load testing</li><li>ramp-up</li>
+          </ul>
+          <div class="links">
+            <a class="btn btn-accent" href="https://github.com/korforge/vegeta-saiyan" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="https://github.com/korforge/vegeta-saiyan/releases" target="_blank" rel="noopener">Releases</a>
+          </div>
+        </div>
+
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="vs-install">Install</button>
+            <button role="tab" aria-selected="false" data-tab="vs-run">Run</button>
+            <button role="tab" aria-selected="false" data-tab="vs-flow">flow.json</button>
+          </div>
+          <div class="tab-panel" id="vs-install">
+<pre><code><span class="c"># Ubuntu only, for now</span>
+REPO=https://github.com/korforge/vegeta-saiyan
+curl -Lo vegeta-saiyan $REPO/releases/latest/download/vegeta-saiyan
+chmod +x vegeta-saiyan
+sudo mv vegeta-saiyan /usr/local/bin/
+
+vegeta-saiyan --help</code></pre>
+          </div>
+          <div class="tab-panel" id="vs-run" hidden>
+<pre><code>vegeta-saiyan --flow flow.json
+
+<span class="c"># results are written per request, e.g.</span>
+<span class="c"># results/get-on-health.json</span></code></pre>
+          </div>
+          <div class="tab-panel" id="vs-flow" hidden>
+<pre><code>{
+  "config": { "debug": false, "remove_results_json": true },
+  "profile": {
+    "type": "rampup",
+    "params": {
+      "min_rps": 100, "min_load_duration": 3,
+      "incremental_rps": 100, "incremental_seconds": 1,
+      "max_rps": 1000, "max_load_duration": 3
+    }
+  },
+  "requests": [
+    { "id": "Get on health", "method": "GET", "url": "http://localhost:8000/health" }
+  ]
+}</code></pre>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="about" class="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div>
+          <h3>Why</h3>
+          <p>Tools built for real needs, shared instead of kept private.</p>
+        </div>
+        <div>
+          <h3>Principles</h3>
+          <p>Small surface, few dependencies, easy to install and remove.</p>
+        </div>
+        <div>
+          <h3>Contribute</h3>
+          <p>Issues and pull requests welcome on each project repository.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logos/korforge.svg" alt="" width="24" height="24">
+    <span>© <span id="year">2026</span> Korforge · Built by Igor Rodrigues</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="Korforge logo">
+  <defs>
+    <linearGradient id="kf-ember" x1="16" y1="8" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB547"/>
+      <stop offset="0.55" stop-color="#FF6A2B"/>
+      <stop offset="1" stop-color="#E0245E"/>
+    </linearGradient>
+    <linearGradient id="kf-steel" x1="0" y1="0" x2="0" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A2F3A"/>
+      <stop offset="1" stop-color="#14171E"/>
+    </linearGradient>
+  </defs>
+  <!-- hexagon frame -->
+  <path d="M64 6 114 35v58L64 122 14 93V35Z" fill="url(#kf-steel)" stroke="url(#kf-ember)" stroke-width="5" stroke-linejoin="round"/>
+  <!-- K: steel stem and upper arm, hot-metal lower arm, split by sharp cuts -->
+  <path d="M38 34h13v60H38Z" fill="#F4F5F7"/>
+  <path d="M57 60 78 34h14L71 60Z" fill="#F4F5F7"/>
+  <path d="M57 68h14l21 26H78Z" fill="url(#kf-ember)"/>
+</svg>
